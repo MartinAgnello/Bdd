@@ -1,0 +1,401 @@
+  Respuestas del Práctico de SQL
+ --------------------------------
+  
+1. Consultas sobre una relación
+ 
+...............................................................................
+
+1a.Encontrar el nombre de la clase y el pais de todas las clases que
+ tengan al menos 10 cañones.
+ 
++-----------+------+
+| clase     | pais |
++-----------+------+
+| Tennessee | USA  |
++-----------+------+
+ 
+...............................................................................
+
+1b. Encontrar el nombre de todos los barcos puestos en funcionamiento
+(lanzados) antes de 1918, pero la columna resultante debería llamarse Barco.
+ 
++-----------------+
+| barco           |
++-----------------+
+| Haruna          |
+| Hiei            |
+| Kirishima       |
+| Kongo           |
+| Ramillies       |
+| Renown          |
+| Repulse         |
+| Resolution      |
+| Revenge         |
+| Royal Oak       |
+| Royal Sovereign |
++-----------------+
+ 
+
+...............................................................................
+
+1c. Encontrar el nombre de los barcos hundidos en batalla, junto con el
+ nombre de la batalla en la cual resultaron hundidos.
+ 
++--------------+----------------+
+| nombre_barco | nombre_batalla |
++--------------+----------------+
+| Bismarck     | North Atlantic |
+| Fuso         | Surigao Strait |
+| Hood         | North Atlantic |
+| Kirishima    | Guadalcanal    |
+| Scharnhorst  | North Cape     |
+| Yamashiro    | Surigao Strait |
++--------------+----------------+
+
+
+...............................................................................
+
+1d. Encontrar todos los barcos que su nombre sea igual a su clase.
+ 
++----------------+----------------+
+| nombre_barco   | clase          |
++----------------+----------------+
+| Iowa           | Iowa           |
+| Kongo          | Kongo          |
+| North Carolina | North Carolina |
+| Renown         | Renown         |
+| Revenge        | Revenge        |
+| Suffolk        | Suffolk        |
+| Tennessee      | Tennessee      |
+| Yamato         | Yamato         |
++----------------+----------------+
+
+
+...............................................................................
+
+1e. Encontrar el nombre de todos los barcos que comienzan con la letra \R".
+ 
++-----------------+
+| nombre_barco    |
++-----------------+
+| Ramillies       |
+| Renown          |
+| Repulse         |
+| Resolution      |
+| Revenge         |
+| Rodney          |
+| Royal Oak       |
+| Royal Sovereign |
++-----------------+
+ 
+
+...............................................................................
+
+1f. Encontrar el nombre de todos los barcos cuyo nombre consista de 3 o
+ más palabras (por ej.,King George V).
+ 
++-------------------+
+| nombre_barco      |
++-------------------+
+| Duke of York      |
+| HMS King George V |
+| Prince of Wales   |
++-------------------+
+
+
+...............................................................................
+
+2. Consultas sobre mas de una relacion.
+
+2a. Encontrar los barcos cuyo peso sea mayor a 35000 toneladas.
+ 
++----------------+----------------+
+| nombre_barco   | desplazamiento |
++----------------+----------------+
+| Iowa           |          46000 |
+| Missouri       |          46000 |
+| New Jersey     |          46000 |
+| Wisconsin      |          46000 |
+| North Carolina |          37000 |
+| Washington     |          37000 |
+| Musashi        |          65000 |
+| Yamato         |          65000 |
++----------------+----------------+
+ 
+
+...............................................................................
+
+2b. Listar el nombre del barco, desplazamiento y cantidad de cañones,
+ de los barcos que participaron en la batalla de Guadalcanal.
+ 
++--------------+----------------+--------------+----------------+
+| nombre_barco | desplazamiento | nro_caniones | nombre_batalla |
++--------------+----------------+--------------+----------------+
+| Kirishima    |          32000 |            8 | Guadalcanal    |
+| Washington   |          37000 |            9 | Guadalcanal    |
++--------------+----------------+--------------+----------------+
+
+o
+
++--------------+----------------+--------------+----------------+
+| nombre_barco | desplazamiento | nro_caniones | nombre_batalla |
++--------------+----------------+--------------+----------------+
+| Kirishima    |          32000 |            8 | Guadalcanal    |
+| South Dakota |           NULL |         NULL | Guadalcanal    |
+| Washington   |          37000 |            9 | Guadalcanal    |
++--------------+----------------+--------------+----------------+
+
+
+...............................................................................
+
+
+2c. Encontrar aquellos paises que dispongan tanto de acorazados
+ (battleships) como de cruceros(battlecruisers).
+ 
++------------+
+| pais       |
++------------+
+| Japan      |
+| Gt.Britain |
++------------+
+
+...............................................................................
+
+2d. Encontrar aquellos barcos que fueron dañados en alguna batalla pero
+ que luego pelearon en otra.
+ 
++--------------+------------------+-----------+------------------+------------+--------------+----------------+-----------+----------------+------------+
+| nombre_barco | nombre_batalla   | resultado | nombre_batalla   | fecha      | nombre_barco | nombre_batalla | resultado | nombre_batalla | fecha      |
++--------------+------------------+-----------+------------------+------------+--------------+----------------+-----------+----------------+------------+
+| Suffolk      | Sola Air Station | averiado  | Sola Air Station | 1940-04-17 | Suffolk      | North Atlantic | ok        | North Atlantic | 1941-05-24 |
++--------------+------------------+-----------+------------------+------------+--------------+----------------+-----------+----------------+------------+
+
+...............................................................................
+
+2e. Encontrar aquellas batallas en las cuales un mismo país participó
+ con al menos tres barcos
+ 
++----------------+------+--------------+--------------+---------------+
+| nombre_batalla | pais | nombre_barco | nombre_barco | nombre_barco  |
++----------------+------+--------------+--------------+---------------+
+| Surigao Strait | USA  | California   | Tennessee    | West Virginia |
++----------------+------+--------------+--------------+---------------+
+
+...............................................................................
+
+3. Subconsultas y Join.
+ Resuelva las siguientes consultas utilizando al menos una subconsulta.
+ Para cada inciso considere soluciones alternativas, por ejemplo, utilizando
+ diferentes conjuntos de operadores EXIST, IN, ALL y ANY.
+ 
+3a. Encontrar los países cuyos barcos tengan el mayor número de cañones.
+ 
++------+--------------+
+| pais | nro_caniones |
++------+--------------+
+| USA  |           12 |
++------+--------------+
+
+...............................................................................
+
+3b. Encontrar las clases de barcos en las cuales exista al menos un barco
+ de dicha clase hundido en batalla.
+ 
++-------+
+| clase |
++-------+
+| Kongo |
++-------+
+
+...............................................................................
+
+3c. Encontrar el nombre de los barcos con cañones de 16 pulgadas de calibre.
+ 
++----------------+
+| nombre_barco   |
++----------------+
+| West Virginia  |
+| Iowa           |
+| Missouri       |
+| New Jersey     |
+| Wisconsin      |
+| North Carolina |
+| Washington     |
++----------------+
+
+...............................................................................
+
+3d. Encontrar las batallas en las cuales participaron barcos de la clase Kongo.
+ 
++----------------+
+| nombre_batalla |
++----------------+
+| Guadalcanal    |
++----------------+
+...............................................................................
+
+3e. Encontrar el nombre de los barcos que dispongan del mayor número de
+ cañones dentro de los barcos que utilicen dicho calibre.
+ 
++-----------------+----------------+---------+--------------+
+| nombre_barco    | clase          | calibre | nro_caniones |
++-----------------+----------------+---------+--------------+
+| West Virginia   | Colorado       |      16 |            9 |
+| Iowa            | Iowa           |      16 |            9 |
+| Missouri        | Iowa           |      16 |            9 |
+| New Jersey      | Iowa           |      16 |            9 |
+| Wisconsin       | Iowa           |      16 |            9 |
+| North Carolina  | North Carolina |      16 |            9 |
+| Washington      | North Carolina |      16 |            9 |
+| Ramillies       | Revenge        |      15 |            8 |
+| Resolution      | Revenge        |      15 |            8 |
+| Revenge         | Revenge        |      15 |            8 |
+| Royal Oak       | Revenge        |      15 |            8 |
+| Royal Sovereign | Revenge        |      15 |            8 |
+| Suffolk         | Suffolk        |       8 |            8 |
+| California      | Tennessee      |      14 |           12 |
+| Tennessee       | Tennessee      |      14 |           12 |
+| Musashi         | Yamato         |      18 |            9 |
+| Yamato          | Yamato         |      18 |            9 |
++-----------------+----------------+---------+--------------+
+
+...............................................................................
+
+
+3f. (JOIN) Escriba una consulta que muestre toda la información disponible
+ (incluyendo batallas y clase) acerca de los barcos de la relación BARCOS.
+ Todos los barcos deberán ser mencionados aun cuando no hayan
+ participado en ninguna batalla o no se disponga de información sobre su clase.
+ 
++-------------------+----------------+---------+------------------+
+| nombre_barco      | clase          | calibre | nombre_batalla   |
++-------------------+----------------+---------+------------------+
+| California        | Tennessee      |      14 | Surigao Strait   |
+| Haruna            | Kongo          |      14 | NULL             |
+| Hiei              | Kongo          |      14 | NULL             |
+| Iowa              | Iowa           |      16 | NULL             |
+| Kirishima         | Kongo          |      14 | Guadalcanal      |
+| Kongo             | Kongo          |      14 | NULL             |
+| Missouri          | Iowa           |      16 | NULL             |
+| Musashi           | Yamato         |      18 | NULL             |
+| New Jersey        | Iowa           |      16 | NULL             |
+| North Carolina    | North Carolina |      16 | NULL             |
+| Ramillies         | Revenge        |      15 | NULL             |
+| Renown            | Renown         |      15 | NULL             |
+| Repulse           | Renown         |      15 | NULL             |
+| Resolution        | Revenge        |      15 | NULL             |
+| Revenge           | Revenge        |      15 | NULL             |
+| Royal Oak         | Revenge        |      15 | NULL             |
+| Royal Sovereign   | Revenge        |      15 | NULL             |
+| Tennessee         | Tennessee      |      14 | Surigao Strait   |
+| Washington        | North Carolina |      16 | Guadalcanal      |
+| Wisconsin         | Iowa           |      16 | NULL             |
+| Yamato            | Yamato         |      18 | NULL             |
+| Bismarck          | NULL           |    NULL | North Atlantic   |
+| Duke of York      | NULL           |    NULL | North Cape       |
+| Fuso              | NULL           |    NULL | Surigao Strait   |
+| Hood              | NULL           |    NULL | North Atlantic   |
+| HMS King George V | NULL           |    NULL | Murmansk         |
+| HMS King George V | NULL           |    NULL | North Atlantic   |
+| Suffolk           | Suffolk        |       8 | North Atlantic   |
+| Suffolk           | Suffolk        |       8 | Sola Air Station |
+| Prince of Wales   | NULL           |    NULL | North Atlantic   |
+| Rodney            | NULL           |    NULL | North Atlantic   |
+| Scharnhorst       | NULL           |    NULL | North Cape       |
+| South Dakota      | NULL           |    NULL | Guadalcanal      |
+| West Virginia     | Colorado       |      16 | Surigao Strait   |
+| Yamashiro         | NULL           |    NULL | Surigao Strait   |
++-------------------+----------------+---------+------------------+
+
+...............................................................................
+
+4. Operaciones sobre relaciones
+ 
+
+4a. Encontrar el número de clases de acorazados.
+ 
++--------------------+
+| CantidadAcorazados |
++--------------------+
+|                  7 |
++--------------------+
+
+...............................................................................
+
+4b. Encontrar el promedio del número de cañones de las clases de acorazados.
+
++-----------------------+
+| PromedioCanionesAcorz |
++-----------------------+
+|                9.1429 |
++-----------------------+
+
+
+...............................................................................
+
+4c. Encontrar el promedio del número de ca~nones de los barcos de tipo
+ acorazado (battleships). Obsérvese que la diferencia entre el inciso b y c
+ se basa en si el promedio se calcula sobre las clases de acorazados o sobre
+ el número de barcos de tipo acorazado.
+ 
++------------------+
+| promedioCaniones |
++------------------+
+|           9.0625 |
++------------------+
+ 
+...............................................................................
+
+4d. Encontrar para cada clase el año en el cual fuera puesto en funcionamiento
+ (lanzado) el primer barco.
+ 
++------------------------+----------------+
+| puestoEnFuncionamiento | clase          |
++------------------------+----------------+
+|                   1920 | Colorado       |
+|                   1943 | Iowa           |
+|                   1913 | Kongo          |
+|                   1941 | North Carolina |
+|                   1916 | Renown         |
+|                   1916 | Revenge        |
+|                   1924 | Suffolk        |
+|                   1920 | Tennessee      |
+|                   1941 | Yamato         |
++------------------------+----------------+ 
+
+...............................................................................
+
+4e. Encontrar para cada clase el número de barcos de esa clase hundidos en 
+  batalla.
+ 
++-------+----------+
+| clase | hundidos |
++-------+----------+
+| Kongo |        1 |
++-------+----------+
+
+...............................................................................
+
+4f. Encontrar para cada clase que tenga al menos tres barcos, el número
+ de barcos de esa clase hundidos en batalla.
+
++--------------+
+| nombre_barco |
++--------------+
+| Kirishima    |
++--------------+
+
+...............................................................................
+
+4g. Encuentre el peso promedio de los cascos disparados por los barcos de
+ cada país. El peso (en libras) del casco disparado desde un cañon es
+ aproximadamente la mitad del cubo del calibre (en pulgadas).
+ 
++------------+-----------------+
+| pais       | avg(peso_casco) |
++------------+-----------------+
+| Gt.Britain |      5.93750000 |
+| Japan      |      7.16666667 |
+| USA        |      8.83333333 |
++------------+-----------------+
+

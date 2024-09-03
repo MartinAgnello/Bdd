@@ -1,0 +1,14 @@
+
+Yo voy a corregir esto:
+
+
+-Ajustar tamano celdas automaticamente dbtables
+-evitar que se vaya texto de la consulta ventana admin
+-limpiar combobox cuando elige calle altura etc inspector
+-focus cuando va a poner password
+-ver tema del tamano de la tabla de multas
+
+Aca va si queres corregir algo vos:
+
+-
+-

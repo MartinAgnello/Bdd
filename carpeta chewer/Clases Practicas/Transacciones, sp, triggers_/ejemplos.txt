@@ -1,0 +1,117 @@
+.........................................................................
+Ejemplos Stored procedures
+
+call p(); 
+
+call q('viernes', Curdate());
+
+call r(10, @A); 
+
+select @A as resultado; 
+
+call porcentaje(1);
+
+
+.........................................................................
+Ejemplo Trigger
+
+select * from cuentas; 
+
+select * from movimientos;
+
+update cuentas set saldo=5000 where numero<=2;
+
+select * from movimientos;
+
+.........................................................................
+Ejemplos Transacciones
+
+update cuentas set saldo=1000 where numero=1;
+
+ejemplo 1: 
+Desde una sola conexión transferir $500 de la cuenta 1 a la cuenta 2  
+
+  
+use bank;
+
+select * from cuentas;
+
+start transaction;
+
+select saldo from cuentas where numero=1 for update;
+
+update cuentas set saldo= saldo-500 where numero=1;
+
+update cuentas set saldo= saldo+500 where numero=2;
+
+commit;
+
+select * from cuentas;
+
+.........................................................................
+
+ejemplo 2: 
+Desde una sola conexión simular una falla (perdida de conexión con exit) 
+al transferir $500 de la cuenta 1 a la cuenta 2  
+ 
+ 
+select * from cuentas ;
+
+start transaction;
+
+select saldo from cuentas where numero=1 for update;
+
+update cuentas set saldo= saldo-500 where numero=1;
+
+select * from cuentas lock in share mode;
+
+exit; #simulamos una falla: perdida de la conexión 
+
+# nos volvemos a conectar y ejecutamos:
+
+use bank;
+select * from cuentas;
+
+.........................................................................
+
+ejemplo 3: 
+Desde la conexión 1 transferimos $500 de la cuenta 2 a la cuenta 1. 
+Desde la conexión 2 transferimos $500 de la cuenta 2 a la cuenta 3.
+
+conexión 1: use bank;
+conexión 2: use bank;
+conexión 1: /* 1 */ start transaction;
+conexión 2: /* 2 */ start transaction; 
+conexión 1: /* 3 */ select saldo from cuentas where numero=2 for update;
+conexión 2: /* 4 */ select saldo from cuentas where numero=2 for update;					  	  
+conexión 1: /* 5 */ update cuentas set saldo= saldo-500 where numero=2;
+conexión 1: /* 6 */ update cuentas set saldo= saldo+500 where numero=1;
+conexión 1: /* 7 */ commit;
+conexión 2: /* 8 */ update cuentas set saldo= saldo-500 where numero=2;
+conexión 2: /* 9 */ update cuentas set saldo= saldo+500 where numero=3;
+conexión 2: /* 10 */ commit;
+					  
+
+.........................................................................
+
+ejemplo 4: 
+Desde la conexión 1 transferimos $500 de la cuenta 1 a la cuenta 3. 
+Desde la conexión 2 transferimos $500 de la cuenta 2 a la cuenta 3.
+
+
+conexión 1: use bank;
+conexión 2: use bank;
+conexión 1: select * from cuentas lock in share mode;
+conexión 1: /* 1 */ start transaction;
+conexión 2: /* 2 */ start transaction; 
+conexión 1: /* 3 */ select saldo from cuentas where numero=1 for update;
+conexión 2: /* 4 */ select saldo from cuentas where numero=2 for update;					  	  
+conexión 1: /* 5 */ update cuentas set saldo= saldo-500 where numero=1;
+conexión 2: /* 6 */ update cuentas set saldo= saldo-500 where numero=2;
+conexión 1: /* 7 */ update cuentas set saldo= saldo+500 where numero=3;
+conexión 2: /* 8: espera */ update cuentas set saldo= saldo+500 where numero=3;
+conexión 1: /* 9 */ commit;
+conexión 2: /* 10 */ commit;
+
+.........................................................................
+
