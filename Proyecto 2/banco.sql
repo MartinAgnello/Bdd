@@ -27,6 +27,7 @@ CREATE TABLE sucursal (
     CONSTRAINT pk_sucursal
     PRIMARY KEY (nro_suc),
 
+    CONSTRAINT fk_sucursal
     FOREIGN KEY (cod_postal) REFERENCES ciudad (cod_postal)
 
 ) ENGINE=InnoDB;
@@ -48,6 +49,7 @@ CREATE TABLE empleado (
     CONSTRAINT pk_empleado
     PRIMARY KEY (legajo),
 
+    CONSTRAINT fk_empleado
     FOREIGN KEY (nro_suc) REFERENCES sucursal (nro_suc)
 
 ) ENGINE=InnoDB;
@@ -79,6 +81,7 @@ CREATE TABLE plazo_fijo (
     CONSTRAINT pk_plazo_fijo
     PRIMARY KEY (nro_plazo),
 
+    CONSTRAINT fk_plazo_fijo
     FOREIGN KEY (nro_suc) REFERENCES sucursal (nro_suc)
 
 ) ENGINE=InnoDB;
@@ -103,6 +106,7 @@ CREATE TABLE plazo_cliente (
     CONSTRAINT pk_plazo_cliente /*preguntar si se pueden poner dos CONSTRAINT*/
     PRIMARY KEY (nro_plazo, nro_cliente),
 
+    CONSTRAINT fk_plazo_cliente
     FOREIGN KEY (nro_plazo) REFERENCES plazo_fijo (nro_plazo),
     FOREIGN KEY (nro_cliente) REFERENCES cliente (nro_cliente)
 
@@ -123,6 +127,7 @@ CREATE TABLE prestamo (
     CONSTRAINT pk_prestamo
     PRIMARY KEY (nro_prestamo),
 
+    CONSTRAINT fk_prestamo
     FOREIGN KEY (legajo) REFERENCES empleado (legajo),
     FOREIGN KEY (nro_cliente) REFERENCES cliente (nro_cliente)
 
@@ -171,6 +176,7 @@ CREATE TABLE cliente_ca (
     CONSTRAINT pk_cliente_ca
     PRIMARY KEY (nro_ca, nro_cliente),
 
+    CONSTRAINT fk_cliente_ca
     FOREIGN KEY (nro_cliente) REFERENCES cliente (nro_cliente),
     FOREIGN KEY (nro_ca) REFERENCES caja_ahorro (nro_ca)
 
@@ -188,6 +194,7 @@ CREATE TABLE tarjeta (
     CONSTRAINT pk_tarjeta
     PRIMARY KEY (nro_tarjeta),
 
+    CONSTRAINT fk_tarjeta
     FOREIGN KEY (nro_cliente, nro_ca) REFERENCES cliente_ca (nro_cliente, nro_ca)
 
 ) ENGINE=InnoDB;
@@ -209,6 +216,7 @@ CREATE TABLE ventanilla (
     CONSTRAINT pk_ventanilla
     PRIMARY KEY (cod_caja),
 
+    CONSTRAINT fk_ventanilla
     FOREIGN KEY (cod_caja) REFERENCES caja (cod_caja), /* esta bien?*/
     FOREIGN KEY (nro_suc) REFERENCES sucursal (nro_suc)
 
@@ -223,6 +231,7 @@ CREATE TABLE atm (
     CONSTRAINT pk_atm
     PRIMARY KEY (cod_caja),
 
+    CONSTRAINT fk_atm
     FOREIGN KEY (cod_caja) REFERENCES caja (cod_caja),
     FOREIGN KEY (cod_postal) REFERENCES ciudad (cod_postal)
 
@@ -250,6 +259,7 @@ CREATE TABLE debito (
     CONSTRAINT pk_debito
     PRIMARY KEY (nro_trans)
 
+    CONSTRAINT fk_debito
     FOREIGN KEY (nro_trans) REFERENCES transaccion (nro_trans),
     FOREIGN KEY (nro_cliente, nro_ca) REFERENCES cliente_ca (nro_cliente, nro_ca)
 
@@ -263,6 +273,7 @@ CREATE TABLE transaccion_por_caja (
     CONSTRAINT pk_transaccion_por_caja
     PRIMARY KEY (nro_trans),
 
+    CONSTRAINT fk_transaccion_por_caja
     FOREIGN KEY (nro_trans) REFERENCES transaccion (nro_trans),
     FOREIGN KEY (cod_caja) REFERENCES caja (cod_caja)
 
@@ -276,6 +287,7 @@ CREATE TABLE deposito (
     CONSTRAINT pk_deposito
     PRIMARY KEY (nro_trans),
 
+    CONSTRAINT fk_deposito
     FOREIGN KEY (nro_trans) REFERENCES transaccion_por_caja (nro_trans),
     FOREIGN KEY (nro_ca) REFERENCES caja_ahorro (nro_ca)
 
@@ -290,6 +302,7 @@ CREATE TABLE extraccion (
     CONSTRAINT pk_extraccion
     PRIMARY KEY (nro_trans),
 
+    CONSTRAINT fk_extraccion
     FOREIGN KEY (nro_trans, nro_ca) REFERENCES cliente_ca (nro_trans, nro_ca),
 
 ) ENGINE=InnoDB;
@@ -304,11 +317,68 @@ CREATE TABLE transferencia (
     CONSTRAINT pk_transferencia
     PRIMARY KEY (nro_trans),
 
+    CONSTRAINT fk_transferencia
     FOREIGN KEY (nro_cliente) REFERENCES cliente_ca (nro_cliente),
     FOREIGN KEY (origen) REFERENCES cliente_ca (nro_ca),
     FOREIGN KEY (destino) REFERENCES caja_ahorro (nro_ca)
 
 ) ENGINE=InnoDB;
+
+
+#-------------------------------------------------------------------------
+# Creación de usuarios y otorgamiento de privilegios
+
+
+    CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+    GRANT ALL PRIVILEGES ON banco.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+
+    CREATE USER 'empleado'@'%' IDENTIFIED BY 'empleado';
+
+    -- Privilegios sólo de consulta (SELECT) sobre las tablas Empleado, Sucursal, Tasa Plazo Fijo y Tasa Prestamo
+    GRANT SELECT ON banco.empleado TO 'empleado'@'%';
+    GRANT SELECT ON banco.sucursal TO 'empleado'@'%';
+    GRANT SELECT ON banco.tasa_plazo_fijo TO 'empleado'@'%';
+    GRANT SELECT ON banco.tasa_prestamo TO 'empleado'@'%';
+
+    -- Privilegios de consulta (SELECT) e inserción (INSERT) sobre las tablas Préstamo, Plazo Fijo, Plazo Cliente, Caja Ahorro y Tarjeta
+    GRANT SELECT, INSERT ON banco.prestamo TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.plazo_fijo TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.plazo_cliente TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.caja_ahorro TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.tarjeta TO 'empleado'@'%';
+
+    -- Privilegios de consulta (SELECT), inserción (INSERT) y modificación (UPDATE) sobre las tablas Cliente CA, Cliente y Pago
+    GRANT SELECT, INSERT, UPDATE ON banco.cliente_ca TO 'empleado'@'%';
+    GRANT SELECT, INSERT, UPDATE ON banco.cliente TO 'empleado'@'%';
+    GRANT SELECT, INSERT, UPDATE ON banco.pago TO 'empleado'@'%';
+
+
+    -- Eliminamos el usuario vacio
+    DROP USER ''@'localhost';
+
+
+    CREATE USER 'atm'@'%' IDENTIFIED BY 'atm';
+
+    GRANT SELECT ON banco.caja_ahorro TO 'atm'@'%';
+    GRANT INSERT banco.transaccion TO 'atm'@'%'; /*PREGUNTAR*/
+
+    /*PREGUNTAR POR JOIN*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
