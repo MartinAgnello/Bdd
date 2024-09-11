@@ -94,7 +94,7 @@ CREATE TABLE tasa_plazo_fijo (
     tasa DECIMAL(3,2) UNSIGNED NOT NULL, /*preguntar*/
 
     CONSTRAINT pk_tasa_plazo_fijo
-    PRIMARY KEY (periodo, monto_inf, monto_sup),
+    PRIMARY KEY (periodo, monto_inf, monto_sup)
 
 ) ENGINE=InnoDB;
 
@@ -257,7 +257,7 @@ CREATE TABLE debito (
     nro_ca INT UNSIGNED NOT NULL,
 
     CONSTRAINT pk_debito
-    PRIMARY KEY (nro_trans)
+    PRIMARY KEY (nro_trans),
 
     CONSTRAINT fk_debito
     FOREIGN KEY (nro_trans) REFERENCES transaccion (nro_trans),
@@ -303,14 +303,14 @@ CREATE TABLE extraccion (
     PRIMARY KEY (nro_trans),
 
     CONSTRAINT fk_extraccion
-    FOREIGN KEY (nro_trans, nro_ca) REFERENCES cliente_ca (nro_trans, nro_ca),
+    FOREIGN KEY (nro_cliente, nro_ca) REFERENCES cliente_ca (nro_cliente, nro_ca)
 
 ) ENGINE=InnoDB;
 
 
 CREATE TABLE transferencia (
     nro_trans INT UNSIGNED NOT NULL,
-    nro_cliente INT UNSIGNED NOT NULL,
+    nro_cliente SMALLINT UNSIGNED NOT NULL,
     origen INT UNSIGNED NOT NULL,
     destino INT UNSIGNED NOT NULL,
 
@@ -329,11 +329,12 @@ CREATE TABLE transferencia (
 # Creación de usuarios y otorgamiento de privilegios
 
 
-    CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+    CREATE USER IF NOT EXISTS 'admin'@'localhost' IDENTIFIED BY 'admin';
+
     GRANT ALL PRIVILEGES ON banco.* TO 'admin'@'localhost' WITH GRANT OPTION;
 
 
-    CREATE USER 'empleado'@'%' IDENTIFIED BY 'empleado';
+    CREATE USER IF NOT EXISTS 'empleado'@'%' IDENTIFIED BY 'empleado';
 
     -- Privilegios sólo de consulta (SELECT) sobre las tablas Empleado, Sucursal, Tasa Plazo Fijo y Tasa Prestamo
     GRANT SELECT ON banco.empleado TO 'empleado'@'%';
@@ -355,13 +356,14 @@ CREATE TABLE transferencia (
 
 
     -- Eliminamos el usuario vacio
-    DROP USER ''@'localhost';
+    DROP USER IF EXISTS ''@'localhost';
 
 
-    CREATE USER 'atm'@'%' IDENTIFIED BY 'atm';
+
+    CREATE USER IF NOT EXISTS 'atm'@'%' IDENTIFIED BY 'atm';
 
     GRANT SELECT ON banco.caja_ahorro TO 'atm'@'%';
-    GRANT INSERT banco.transaccion TO 'atm'@'%'; /*PREGUNTAR*/
+    GRANT INSERT ON banco.transaccion TO 'atm'@'%'; /*PREGUNTAR*/
 
     /*PREGUNTAR POR JOIN*/
 
