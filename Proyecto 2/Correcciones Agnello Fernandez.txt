@@ -1,0 +1,27 @@
+Corregir horario de Sucursal a longitud 50			/*AGREGADO*/
+
+-------
+
+Vistas: 
+
+	quitar los acentos en las palabras deposito, extracción, debito 	/*AGREGADO*/
+	y poner todas las palabras de la columna tipo en minúsculas.		/*AGREGADO*/
+
+	revisar los valores de nro_ca y saldo en el caso de las transferencias,	/*FALTA*/
+	pues se muestran los valores 
+
+		ca.nro_ca y ca.saldo que corresponden ambos al destino de la operación en 		vez de al origen.
+
+
+--------
+
+Permisos de ATM
+
+El permiso de lectura para ATM debe ser sobre la vista 
+
+	trans_cajas_ahorro					/*AGREGADO*/
+
+
+Falta permiso de actualización sobre tabla tarjeta.		/*AGREGADO*/
+El permiso de inserción sobre tabla transaccion no debe ir.	/*COMENTADO*/
+

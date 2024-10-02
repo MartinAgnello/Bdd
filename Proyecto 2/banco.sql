@@ -21,7 +21,7 @@ CREATE TABLE sucursal (
     nombre VARCHAR(20) NOT NULL,
     direccion VARCHAR(20) NOT NULL,
     telefono VARCHAR(20) NOT NULL,
-    horario VARCHAR(20) NOT NULL,
+    horario VARCHAR(50) NOT NULL,
     cod_postal SMALLINT UNSIGNED NOT NULL,
 
     CONSTRAINT pk_sucursal
@@ -188,8 +188,10 @@ CREATE TABLE cliente_ca (
     PRIMARY KEY (nro_ca, nro_cliente),
 
     CONSTRAINT fk_cliente_ca
+	
     FOREIGN KEY (nro_cliente) REFERENCES cliente (nro_cliente)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (nro_ca) REFERENCES caja_ahorro (nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
 	
@@ -283,8 +285,10 @@ CREATE TABLE debito (
     PRIMARY KEY (nro_trans),
 
     CONSTRAINT fk_debito
+	
     FOREIGN KEY (nro_trans) REFERENCES transaccion (nro_trans)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (nro_cliente, nro_ca) REFERENCES cliente_ca (nro_cliente, nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE
 
@@ -301,6 +305,7 @@ CREATE TABLE transaccion_por_caja (
     CONSTRAINT fk_transaccion_por_caja
     FOREIGN KEY (nro_trans) REFERENCES transaccion (nro_trans)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (cod_caja) REFERENCES caja (cod_caja)
 	ON DELETE RESTRICT ON UPDATE CASCADE
 
@@ -317,6 +322,7 @@ CREATE TABLE deposito (
     CONSTRAINT fk_deposito
     FOREIGN KEY (nro_trans) REFERENCES transaccion_por_caja (nro_trans)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (nro_ca) REFERENCES caja_ahorro (nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE
 
@@ -334,6 +340,7 @@ CREATE TABLE extraccion (
     CONSTRAINT fk_extraccion
     FOREIGN KEY (nro_cliente, nro_ca) REFERENCES cliente_ca (nro_cliente, nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (nro_trans) REFERENCES transaccion_por_caja (nro_trans)
 	ON DELETE RESTRICT ON UPDATE CASCADE
 
@@ -350,56 +357,19 @@ CREATE TABLE transferencia (
     PRIMARY KEY (nro_trans),
 
     CONSTRAINT fk_transferencia
+	
     FOREIGN KEY (nro_trans) REFERENCES transaccion_por_caja (nro_trans)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (nro_cliente, origen) REFERENCES cliente_ca (nro_cliente, nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE,
+	
     FOREIGN KEY (destino) REFERENCES caja_ahorro (nro_ca)
 	ON DELETE RESTRICT ON UPDATE CASCADE
 
 ) ENGINE=InnoDB;
 
 
-#-------------------------------------------------------------------------
-# Creación de usuarios y otorgamiento de privilegios
-
-
-    CREATE USER IF NOT EXISTS 'admin'@'localhost' IDENTIFIED BY 'admin';
-
-    GRANT ALL PRIVILEGES ON banco.* TO 'admin'@'localhost' WITH GRANT OPTION;
-
-
-    CREATE USER IF NOT EXISTS 'empleado'@'%' IDENTIFIED BY 'empleado';
-
-    -- Privilegios sólo de consulta (SELECT) sobre las tablas Empleado, Sucursal, Tasa Plazo Fijo y Tasa Prestamo
-    GRANT SELECT ON banco.empleado TO 'empleado'@'%';
-    GRANT SELECT ON banco.sucursal TO 'empleado'@'%';
-    GRANT SELECT ON banco.tasa_plazo_fijo TO 'empleado'@'%';
-    GRANT SELECT ON banco.tasa_prestamo TO 'empleado'@'%';
-
-    -- Privilegios de consulta (SELECT) e inserción (INSERT) sobre las tablas Préstamo, Plazo Fijo, Plazo Cliente, Caja Ahorro y Tarjeta
-    GRANT SELECT, INSERT ON banco.prestamo TO 'empleado'@'%';
-    GRANT SELECT, INSERT ON banco.plazo_fijo TO 'empleado'@'%';
-    GRANT SELECT, INSERT ON banco.plazo_cliente TO 'empleado'@'%';
-    GRANT SELECT, INSERT ON banco.caja_ahorro TO 'empleado'@'%';
-    GRANT SELECT, INSERT ON banco.tarjeta TO 'empleado'@'%';
-
-    -- Privilegios de consulta (SELECT), inserción (INSERT) y modificación (UPDATE) sobre las tablas Cliente CA, Cliente y Pago
-    GRANT SELECT, INSERT, UPDATE ON banco.cliente_ca TO 'empleado'@'%';
-    GRANT SELECT, INSERT, UPDATE ON banco.cliente TO 'empleado'@'%';
-    GRANT SELECT, INSERT, UPDATE ON banco.pago TO 'empleado'@'%';
-
-
-    -- Eliminamos el usuario vacio
-    DROP USER IF EXISTS ''@'localhost';
-	
-	
-	-- Creamos el usuario atm
-    CREATE USER IF NOT EXISTS 'atm'@'%' IDENTIFIED BY 'atm';
-
-    GRANT SELECT ON banco.caja_ahorro TO 'atm'@'%';
-    GRANT INSERT ON banco.transaccion TO 'atm'@'%'; /*PREGUNTAR*/
-	
 #-------------------------------------------------------------------
 #Creacion de vistas 
 
@@ -411,10 +381,10 @@ CREATE TABLE transferencia (
 		transa.fecha,
 		transa.hora,
 		CASE
-			WHEN transf.nro_trans IS NOT NULL THEN 'Transferencia'
-			WHEN deposito.nro_trans IS NOT NULL THEN 'Depósito'
-			WHEN debito.nro_trans IS NOT NULL THEN 'Débito'
-			WHEN extraccion.nro_trans IS NOT NULL THEN 'Extracción'
+			WHEN transf.nro_trans IS NOT NULL THEN 'transferencia'
+			WHEN deposito.nro_trans IS NOT NULL THEN 'deposito'
+			WHEN debito.nro_trans IS NOT NULL THEN 'debito'
+			WHEN extraccion.nro_trans IS NOT NULL THEN 'extraccion'
 			ELSE NULL
 		END AS tipo,
 		transa.monto,
@@ -459,6 +429,83 @@ CREATE TABLE transferencia (
 	todos LEFT JOIN
 	*/
 	
+#-------------------------------------------------------------------
+#Creacion de vistas
+#Nueva version de trans_cajas_ahorro 
+
+/*
+CREATE VIEW trans_cajas_ahorros AS
+	SELECT ca_a.nro_ca, ca_a.saldo, trans.nro_trans, trans.fecha, trans.hora, 
+	CASE
+			WHEN transf.nro_trans IS NOT NULL THEN 'transferencia'
+			WHEN deposito.nro_trans IS NOT NULL THEN 'deposito'
+			WHEN debito.nro_trans IS NOT NULL THEN 'debito'
+			WHEN extraccion.nro_trans IS NOT NULL THEN 'extraccion'
+			ELSE NULL
+		END AS tipo,
+	trans.monto, transaccion_por_caja.cod_caja, cl.nro_cliente, cl.tipo_doc, cl.nro_doc, cl.nombre, cl.apellido, transf.destino
+	FROM transaccion AS trans
+	JOIN transaccion_por_caja ON trans.nro_trans = transaccion_por_caja.nro_trans	#relacionamos transaccion con trans_por_caja y de ahi obtenemos cod caja
+	JOIN deposito ON trans.nro_trans = deposito.trans 
+	JOIN extraccion ON trans.nro_trans = extraccion.nro_trans
+	JOIN transferencia ON trans.nro_trans = transferencia.nro_trans
+	JOIN debito ON trans.nro_trans = debito.nro_trans
+	JOIN cliente_ca AS cl_ca ON (		#de aca sale el tipo de transaccion
+		(debito.nro_cliente = cl_ca.nro_cliente AND debito.nro_ca = cl_ca.nro_ca) OR
+		(extraccion.nro_cliente = cl_ca.nro_cliente AND extraccion.nro_ca = cl_ca.nro_ca) OR
+		(transf.nro_cliente = cl_ca.nro_cliente AND transf.origen = cl_ca.nro_ca) OR
+		(cl_ca.nro_ca = caja_ahorro.nro_ca AND deposito.nro_ca = cl_ca.nro_ca)	
+		)
+	JOIN cliente AS cl ON cliente.nro_cliente = cl_ca.nro_cliente
+	JOIN caja_ahorro AS ca_a ON ca_a.nro_ca;
+	
+	*/
+	
+
+
+#-------------------------------------------------------------------------
+# Creación de usuarios y otorgamiento de privilegios
+
+
+    CREATE USER IF NOT EXISTS 'admin'@'localhost' IDENTIFIED BY 'admin';
+
+    GRANT ALL PRIVILEGES ON banco.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+
+    CREATE USER IF NOT EXISTS 'empleado'@'%' IDENTIFIED BY 'empleado';
+
+    -- Privilegios sólo de consulta (SELECT) sobre las tablas Empleado, Sucursal, Tasa Plazo Fijo y Tasa Prestamo
+    GRANT SELECT ON banco.empleado TO 'empleado'@'%';
+    GRANT SELECT ON banco.sucursal TO 'empleado'@'%';
+    GRANT SELECT ON banco.tasa_plazo_fijo TO 'empleado'@'%';
+    GRANT SELECT ON banco.tasa_prestamo TO 'empleado'@'%';
+
+    -- Privilegios de consulta (SELECT) e inserción (INSERT) sobre las tablas Préstamo, Plazo Fijo, Plazo Cliente, Caja Ahorro y Tarjeta
+    GRANT SELECT, INSERT ON banco.prestamo TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.plazo_fijo TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.plazo_cliente TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.caja_ahorro TO 'empleado'@'%';
+    GRANT SELECT, INSERT ON banco.tarjeta TO 'empleado'@'%';
+
+    -- Privilegios de consulta (SELECT), inserción (INSERT) y modificación (UPDATE) sobre las tablas Cliente CA, Cliente y Pago
+    GRANT SELECT, INSERT, UPDATE ON banco.cliente_ca TO 'empleado'@'%';
+    GRANT SELECT, INSERT, UPDATE ON banco.cliente TO 'empleado'@'%';
+    GRANT SELECT, INSERT, UPDATE ON banco.pago TO 'empleado'@'%';
+
+
+    -- Eliminamos el usuario vacio
+    DROP USER IF EXISTS ''@'localhost';
+	
+	
+	-- Creamos el usuario atm
+    CREATE USER IF NOT EXISTS 'atm'@'%' IDENTIFIED BY 'atm';
+
+    GRANT SELECT ON banco.caja_ahorro TO 'atm'@'%';
+	GRANT SELECT ON banco.trans_cajas_ahorro TO 'atm'@'%';
+	GRANT UPDATE ON banco.tarjeta TO 'atm'@'%';
+    /*GRANT INSERT ON banco.transaccion TO 'atm'@'%';*/ /*PREGUNTAR*/
+	
+
 
 
 
