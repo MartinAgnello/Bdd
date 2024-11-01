@@ -1,0 +1,623 @@
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+SQLException: Duplicate entry 'Surigao Strait' for key 'batallas.PRIMARY'
+SQLState: 23000
+VendorError: 1062
+Ya existe una batalla con nombre 'Surigao Strait
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+Ejecuta el listener del boton Buscar
+Ejecuta el listener del boton Limpiar
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQLException: Duplicate entry 'North Atlantic' for key 'batallas.PRIMARY'
+SQLState: 23000
+VendorError: 1062
+Ya existe una batalla con nombre 'North Atlantic
+Crea una ventana modal informando sobre el mensaje
+Ejecuta el listener del boton Crear
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Eliminar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+Crea una ventana modal informando sobre el mensaje
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/conexionBD.properties
+se cargó exitosamente
+se recupero el usuario: nully password: null
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=null, pass=null
+Error al crear la conexión con la base de datos.
+SQLException: Access denied for user 'drgsk'@'localhost' (using password: NO)
+SQLState: 28000
+VendorError: 1045
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/conexionBD.properties
+se cargó exitosamente
+se recupero el usuario: nully password: null
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=null, pass=null
+Error al crear la conexión con la base de datos.
+SQLException: Access denied for user 'drgsk'@'localhost' (using password: NO)
+SQLState: 28000
+VendorError: 1045
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Ejecuta el listener del boton Crear
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/conexionBD.properties
+se cargó exitosamente
+se recupero el usuario: nully password: null
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=null, pass=null
+Error al crear la conexión con la base de datos.
+SQLException: Access denied for user 'drgsk'@'localhost' (using password: NO)
+SQLState: 28000
+VendorError: 1045
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/conexionBD.properties
+se cargó exitosamente
+se recupero el usuario: nully password: null
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=null, pass=null
+Error al crear la conexión con la base de datos.
+SQLException: Access denied for user 'drgsk'@'localhost' (using password: NO)
+SQLState: 28000
+VendorError: 1045
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallasy password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallasy password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallasy password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+Crea una ventana modal informando sobre el mensaje
+Ejecuta el listener del boton Crear
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Eliminar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallasy password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQL: INSERT INTO batallas(nombre_batalla, fecha) values (jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires,dfsgs)
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQL: INSERT INTO batallas(nombre_batalla, fecha) values (hola,2021-09-08)
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%%'
+Se recuperó el item con nombre dfsgs y fecha 2021-09-02
+Se recuperó el item con nombre Guadalcanal y fecha 1942-11-15
+Se recuperó el item con nombre hola y fecha 2021-09-08
+Se recuperó el item con nombre Murmansk y fecha 1942-05-01
+Se recuperó el item con nombre North Atlantic y fecha 1941-05-24
+Se recuperó el item con nombre North Cape y fecha 1943-12-26
+Se recuperó el item con nombre Sola Air Station y fecha 1940-04-17
+Se recuperó el item con nombre Surigao Strait y fecha 1944-10-25
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Error al crear la conexión con la base de datos.
+SQLException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+SQLState: 08S01
+VendorError: 0
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQL: INSERT INTO batallas(nombre_batalla, fecha) values (batalla1,2021-09-08)
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Actualizar
+SQL: UPDATE batallas SET nombre_batalla= batalla2, fecha=2021-09-02 WHERE nombre_batalla=batalla1
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%North%'
+Se recuperó el item con nombre North Atlantic y fecha 1941-05-24
+Se recuperó el item con nombre North Cape y fecha 1943-12-26
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%so%'
+Se recuperó el item con nombre Sola Air Station y fecha 1940-04-17
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%%'AND fecha= '2021-09-02'
+Se recuperó el item con nombre batalla2 y fecha 2021-09-02
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Eliminar
+SQL: DELETE FROM batallas WHERE nombre_batalla=batalla2
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQL: INSERT INTO batallas(nombre_batalla, fecha) values (batalla1,2021-09-01)
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Crear
+SQL: INSERT INTO batallas(nombre_batalla, fecha) values (batalla2,1941-05-02)
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%bat%'
+Se recuperó el item con nombre batalla1 y fecha 2021-09-01
+Se recuperó el item con nombre batalla2 y fecha 1941-05-02
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Eliminar
+SQL: DELETE FROM batallas WHERE nombre_batalla=batalla1
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%bat%'
+Se recuperó el item con nombre batalla2 y fecha 1941-05-02
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Buscar
+SQL: SELECT nombre_batalla, fecha FROM batallas WHERE nombre_batalla LIKE '%bat%'AND fecha= '2021-09-08'
+Muestra una lista de batallas en la tabla Batallas
+Ejecuta el listener del boton Limpiar
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Error al crear la conexión con la base de datos.
+SQLException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+SQLState: 08S01
+VendorError: 0
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Error al crear la conexión con la base de datos.
+SQLException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+SQLState: 08S01
+VendorError: 0
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor. Error al recuperar el usuario y password del archivo de configuración de usuarios
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor. Error al recuperar el usuario y password del archivo de configuración de usuarios
+Crea una ventana modal informando sobre el mensaje
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicación
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargó exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Se establece la conexión con la BD
+se conectó exitosamente al servido
+Se crea el controlador.
+Se intenta realizar la siguiente consulta select nombre_batalla, fecha as fecha from Batallas
+Muestra una lista de batallas en la tabla Batallas
+Se inicia la aplicaciï¿½n
+Recuperaciï¿½n de los datos para la conexiï¿½n con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargï¿½ exitosamente
+Parï¿½metros de conexiï¿½n: jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se intenta leer el archivo de propiedades con los datos del usuario cfg/usuarios.properties
+se cargï¿½ exitosamente
+se recupero el usuario: admin_batallas y password: pwadmin
+Parametros de conexion: url= jdbc:mysql://localhost:3306/batallas?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=admin_batallas, pass=pwadmin
+Error al crear la conexiï¿½n con la base de datos.
+SQLException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+SQLState: 08S01
+VendorError: 0
+Se produjo un error al recuperar el archivo de propiedades con los datos del usuario y no se puedo establecer la conexion
+No se pudo conectar al servidor. Error al recuperar el usuario y password del archivo de configuraciï¿½n de usuarios
+Crea una ventana modal informando sobre el mensaje
