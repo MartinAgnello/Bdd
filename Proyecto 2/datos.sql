@@ -45,8 +45,9 @@ INSERT INTO pago (nro_prestamo, nro_pago, fecha_venc, fecha_pago) VALUES
 (10, 2, '2024-08-01', NULL),			/*prestamo efectuado por KUBRICK (legajo 2100)*/
 (20, 1, '2024-08-01', '2024-08-01'),
 (20, 2, '2024-09-01', '2024-09-01'),
-(40, 1, '2024-10-01', NULL),
-(40, 2, '2024-10-01', '2024-10-01');
+(40, 1, '2023-10-01', NULL),
+(40, 2, '2023-11-01', '2024-11-01'),
+(40, 3, '2023-12-01', NULL);
 
 -- Inserción de datos en la tabla tasa_prestamo
 INSERT INTO tasa_prestamo (periodo, monto_inf, monto_sup, tasa) VALUES
