@@ -372,7 +372,7 @@ CREATE TABLE transferencia (
 
 #-------------------------------------------------------------------
 #Creacion de vistas 
-
+/*
 	CREATE VIEW trans_cajas_ahorro AS
 	SELECT
 		ca.nro_ca,
@@ -416,6 +416,57 @@ CREATE TABLE transferencia (
 			ELSE NULL
 		END
 	);
+*/
+	CREATE VIEW trans_cajas_ahorro AS
+
+		SELECT distinct nro_ca, saldo, Depo_Trans.nro_trans, fecha, hora, "Deposito" as tipo, monto, cod_caja, NULL as nro_cliente, NULL as tipo_doc,
+		NULL as nro_doc, NULL as nombre, NULL as apellido, NULL as destino
+		from
+		(SELECT distinct nro_trans, fecha, hora, monto from deposito natural join transaccion) Depo_Trans
+		natural join
+		(SELECT distinct nro_ca, saldo, nro_trans from deposito natural join caja_Ahorro) Depo_CA
+		natural join
+		(SELECT distinct nro_trans, cod_caja from deposito natural join transaccion_por_caja) Depo_por_caja
+
+		UNION
+
+		SELECT distinct nro_ca, saldo, Deb_Trans.nro_trans, fecha, hora, "Debito" as tipo, monto, NULL as cod_caja, nro_cliente,
+		tipo_doc, nro_doc, nombre, apellido, NULL as destino
+		from
+		(SELECT distinct nro_trans,fecha, hora, monto from debito natural join transaccion) Deb_Trans
+		natural join
+		(SELECT distinct nro_ca, saldo, nro_trans from debito natural join caja_Ahorro) Deb_CA
+		natural join
+		(SELECT distinct nro_trans, nro_cliente, tipo_doc, nro_doc, nombre, apellido
+		from debito natural join cliente) Deb_Cli
+
+		UNION
+
+		select distinct nro_ca, saldo, Extracc_Trans.nro_trans, fecha, hora, "Extraccion" as tipo, monto, cod_caja, nro_cliente, tipo_doc,
+		nro_doc, nombre, apellido, NULL as destino
+		from
+		(select distinct nro_trans, fecha, hora, monto from extraccion natural join transaccion) Extracc_Trans
+		natural join
+		(select distinct nro_ca, saldo, nro_trans from extraccion natural join caja_Ahorro) Extracc_CA
+		natural join
+		(select distinct nro_trans, cod_caja from extraccion natural join transaccion_por_caja) Extracc_por_Caja
+		natural join
+		(select distinct nro_trans, nro_cliente, tipo_doc, nro_doc, nombre, apellido
+		from extraccion natural join cliente) Extracc_Cli
+
+		UNION
+
+		select distinct nro_ca, saldo, Transf_Trans.nro_trans, fecha, hora, "Transferencia" as tipo, monto, cod_caja, nro_cliente, tipo_doc,
+		nro_doc, nombre, apellido, destino
+		from
+		 (select distinct nro_trans, fecha, hora, monto, destino from transferencia natural join transaccion) Transf_Trans
+		natural join
+		 (select distinct nro_ca, saldo, nro_trans from Transferencia join caja_Ahorro on origen = nro_ca) Transf_CA
+		natural join
+		 (select distinct nro_trans, cod_caja from transferencia natural join transaccion_por_caja) Transf_por_Caja
+		natural join
+		 (select distinct nro_trans, nro_cliente, tipo_doc, nro_doc, nombre, apellido from transferencia natural join Cliente) Trans_Cli
+		order by "Caja de ahorro",tipo;
 
 
 
@@ -502,6 +553,7 @@ CREATE VIEW trans_cajas_ahorros AS
 
     GRANT SELECT ON banco.caja_ahorro TO 'atm'@'%';
 	GRANT SELECT ON banco.trans_cajas_ahorro TO 'atm'@'%';
+	GRANT SELECT ON banco.tarjeta TO 'atm'@'%';
 	GRANT UPDATE ON banco.tarjeta TO 'atm'@'%';
     /*GRANT INSERT ON banco.transaccion TO 'atm'@'%';*/ /*PREGUNTAR*/
 	
