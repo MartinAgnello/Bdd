@@ -27,7 +27,7 @@ INSERT INTO cliente (nro_cliente, apellido, nombre, tipo_doc, nro_doc, direccion
 (2,'Martínez', 'Carlos', 'DNI', 55667788, 'Calle 4', '987654321', '1990-12-30'),
 (3,'Ramirez', 'Sofia', 'DNI', 33221155, 'Calle 7', '555666777', '1992-03-25'),
 (4,'Torres', 'Diego', 'DNI', 44556677, 'Calle 8', '888999000', '1988-11-05'),
-(150,  "Hanks", "Tom",'Pasaporte', 20100200, "Calle Soldado Ryan",  "44555111", "1970-10-8"),
+(150,"Hanks", "Tom",'Pasaporte', 20100200, "Calle Soldado Ryan",  "44555111", "1970-10-8"),
 (5,'Samuel', 'Jackson', 'DNI', 39115231, 'Calle 123', '888999002', '1995-12-05');
 
 
@@ -92,7 +92,8 @@ INSERT INTO transaccion (nro_trans, fecha, hora, monto) VALUES
 (1,'2024-09-01', '10:00:00', 100.00),
 (2,'2024-09-02', '11:00:00', 200.00),
 (3,'2024-09-03', '12:00:00', 150.00),
-(4,'2024-09-04', '14:00:00', 250.00);
+(4,'2024-09-04', '14:00:00', 250.00),
+(5,'2024-08-04', '14:00:00', 280.00);
 
 -- Inserción de datos en la tabla debito
 INSERT INTO debito (nro_trans, descripcion, nro_cliente, nro_ca) VALUES
@@ -106,7 +107,8 @@ INSERT INTO transaccion_por_caja (nro_trans, cod_caja) VALUES
 (1, 100),
 (2, 100),
 (3, 100),
-(4, 100);
+(4, 100),
+(5,100);
 
 -- Inserción de datos en la tabla deposito
 INSERT INTO deposito (nro_trans, nro_ca) VALUES
@@ -116,7 +118,8 @@ INSERT INTO deposito (nro_trans, nro_ca) VALUES
 
 -- Inserción de datos en la tabla extraccion
 INSERT INTO extraccion (nro_trans, nro_cliente, nro_ca) VALUES
-(4, 1, 51);
+(4, 1, 51),
+(5, 1, 51);
 
 -- Inserción de datos en la tabla transferencia
 INSERT INTO transferencia (nro_trans, nro_cliente, origen, destino) VALUES

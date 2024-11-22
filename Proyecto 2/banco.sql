@@ -470,50 +470,6 @@ CREATE TABLE transferencia (
 
 
 
-
-	/*Unimos los tipos*/
-
-	/*falta cod_caja y ver como relacionar el tipo */
-
-	/*
-	Utilizaremos left join xq hay nulos en algunas tablas. Preguntar si hacemos bien utilizando
-	todos LEFT JOIN
-	*/
-	
-#-------------------------------------------------------------------
-#Creacion de vistas
-#Nueva version de trans_cajas_ahorro 
-
-/*
-CREATE VIEW trans_cajas_ahorros AS
-	SELECT ca_a.nro_ca, ca_a.saldo, trans.nro_trans, trans.fecha, trans.hora, 
-	CASE
-			WHEN transf.nro_trans IS NOT NULL THEN 'transferencia'
-			WHEN deposito.nro_trans IS NOT NULL THEN 'deposito'
-			WHEN debito.nro_trans IS NOT NULL THEN 'debito'
-			WHEN extraccion.nro_trans IS NOT NULL THEN 'extraccion'
-			ELSE NULL
-		END AS tipo,
-	trans.monto, transaccion_por_caja.cod_caja, cl.nro_cliente, cl.tipo_doc, cl.nro_doc, cl.nombre, cl.apellido, transf.destino
-	FROM transaccion AS trans
-	JOIN transaccion_por_caja ON trans.nro_trans = transaccion_por_caja.nro_trans	#relacionamos transaccion con trans_por_caja y de ahi obtenemos cod caja
-	JOIN deposito ON trans.nro_trans = deposito.trans 
-	JOIN extraccion ON trans.nro_trans = extraccion.nro_trans
-	JOIN transferencia ON trans.nro_trans = transferencia.nro_trans
-	JOIN debito ON trans.nro_trans = debito.nro_trans
-	JOIN cliente_ca AS cl_ca ON (		#de aca sale el tipo de transaccion
-		(debito.nro_cliente = cl_ca.nro_cliente AND debito.nro_ca = cl_ca.nro_ca) OR
-		(extraccion.nro_cliente = cl_ca.nro_cliente AND extraccion.nro_ca = cl_ca.nro_ca) OR
-		(transf.nro_cliente = cl_ca.nro_cliente AND transf.origen = cl_ca.nro_ca) OR
-		(cl_ca.nro_ca = caja_ahorro.nro_ca AND deposito.nro_ca = cl_ca.nro_ca)	
-		)
-	JOIN cliente AS cl ON cliente.nro_cliente = cl_ca.nro_cliente
-	JOIN caja_ahorro AS ca_a ON ca_a.nro_ca;
-	
-	*/
-	
-
-
 #-------------------------------------------------------------------------
 # Creación de usuarios y otorgamiento de privilegios
 
